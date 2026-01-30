@@ -2,7 +2,7 @@ from sqlalchemy import create_engine,Column,Integer,String,Boolean,ForeignKey,Fl
 from sqlalchemy.orm import declarative_base,sessionmaker, relationship
 
 #veritabanı_motoru
-DataBase_url = "sqlite:///adisyon_sistemi.db"
+DataBase_url = 'postgresql://neondb_owner:npg_IQxY2dJNn3Lr@ep-shy-frog-ahdb686n-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
 engine = create_engine(DataBase_url, connect_args={"check_same_thread": False})
 
 #oturum_yöneticisi
@@ -76,4 +76,5 @@ if __name__ == "__main__":
     print("veritabani oluşturuluyor...")
     Base.metadata.create_all(bind=engine)
     print("Başarili!'adisyon_sistemi.db' oluşturuldu." )
+
 
