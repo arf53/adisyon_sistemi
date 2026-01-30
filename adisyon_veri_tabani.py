@@ -3,7 +3,7 @@ from sqlalchemy.orm import declarative_base,sessionmaker, relationship
 
 #veritabanı_motoru
 DataBase_url = 'postgresql://neondb_owner:npg_IQxY2dJNn3Lr@ep-shy-frog-ahdb686n-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
-engine = create_engine(DataBase_url, connect_args={"check_same_thread": False})
+engine = create_engine(DataBase_url)
 
 #oturum_yöneticisi
 #veritabanı ile konuşacak olan temsilci
@@ -76,5 +76,6 @@ if __name__ == "__main__":
     print("veritabani oluşturuluyor...")
     Base.metadata.create_all(bind=engine)
     print("Başarili!'adisyon_sistemi.db' oluşturuldu." )
+
 
 
